@@ -90,13 +90,15 @@
         <dependency>
             <groupId>org.bitcoinj</groupId>
             <artifactId>bitcoinj-core</artifactId>
-            <version>0.14.2</version>
+            <!-- <version>0.14.2</version> -->
+            <version>${bitcoinj-version}</version>
         </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
+        <bitcoinj-version>0.15-SNAPSHOT</bitcoinj-version>
     </properties>
     <name>libdohj</name>
 </project>

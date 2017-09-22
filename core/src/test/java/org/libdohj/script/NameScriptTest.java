@@ -15,24 +15,23 @@
  */
 package org.libdohj.script;
 
-import org.libdohj.params.AbstractNamecoinParams;
-import org.libdohj.params.NamecoinMainNetParams;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
 
 import org.bitcoinj.core.Context;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.TransactionOutput;
 import org.bitcoinj.core.Util;
 import org.bitcoinj.script.Script;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import org.junit.rules.ExpectedException;
-
-import java.io.IOException;
+import org.libdohj.params.AbstractNamecoinParams;
+import org.libdohj.params.NamecoinMainNetParams;
 
 /**
  *
@@ -76,7 +75,7 @@ public class NameScriptTest {
     public void nameNewGetOpName() throws IOException {
         final NameScript ns = getNameNewNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not an AnyUpdate op");
         ns.getOpName();
     }
@@ -85,7 +84,7 @@ public class NameScriptTest {
     public void nameNewGetOpValue() throws IOException {
         final NameScript ns = getNameNewNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not an AnyUpdate op");
         ns.getOpValue();
         
@@ -191,7 +190,7 @@ public class NameScriptTest {
     public void currencyIsAnyUpdate() throws IOException {
         final NameScript ns = getCurrencyNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not a name op");
         ns.isAnyUpdate();
     }
@@ -200,7 +199,7 @@ public class NameScriptTest {
     public void currencyGetOpName() throws IOException {
         final NameScript ns = getCurrencyNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not an AnyUpdate op");
         ns.getOpName();
     }
@@ -209,7 +208,7 @@ public class NameScriptTest {
     public void currencyGetOpValue() throws IOException {
         final NameScript ns = getCurrencyNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not an AnyUpdate op");
         ns.getOpValue();
     }
@@ -227,7 +226,7 @@ public class NameScriptTest {
     public void returnGetAddress() throws IOException {
         final NameScript ns = getReturnNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Cannot cast this script to a pay-to-address type");
         ns.getAddress().getToAddress(params).toString();
     }
@@ -238,7 +237,7 @@ public class NameScriptTest {
     public void returnIsAnyUpdate() throws IOException {
         final NameScript ns = getReturnNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not a name op");
         ns.isAnyUpdate();
     }
@@ -247,7 +246,7 @@ public class NameScriptTest {
     public void returnGetOpName() throws IOException {
         final NameScript ns = getReturnNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not an AnyUpdate op");
         ns.getOpName();
     }
@@ -256,7 +255,7 @@ public class NameScriptTest {
     public void returnGetOpValue() throws IOException {
         final NameScript ns = getReturnNameScript();
         
-        expectedEx.expect(org.bitcoinj.core.ScriptException.class);
+        expectedEx.expect(org.bitcoinj.script.ScriptException.class);
         expectedEx.expectMessage("Not an AnyUpdate op");
         ns.getOpValue();
     }

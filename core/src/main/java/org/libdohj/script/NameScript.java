@@ -16,14 +16,21 @@
 
 package org.libdohj.script;
 
-import org.bitcoinj.core.ScriptException;
-import org.bitcoinj.script.Script;
-import org.bitcoinj.script.ScriptBuilder;
-import org.bitcoinj.script.ScriptChunk;
-import static org.bitcoinj.script.ScriptOpCodes.*;
+import static org.bitcoinj.script.ScriptOpCodes.OP_1;
+import static org.bitcoinj.script.ScriptOpCodes.OP_2;
+import static org.bitcoinj.script.ScriptOpCodes.OP_2DROP;
+import static org.bitcoinj.script.ScriptOpCodes.OP_3;
+import static org.bitcoinj.script.ScriptOpCodes.OP_DROP;
+import static org.bitcoinj.script.ScriptOpCodes.OP_NOP;
+import static org.bitcoinj.script.ScriptOpCodes.OP_PUSHDATA4;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.bitcoinj.script.Script;
+import org.bitcoinj.script.ScriptBuilder;
+import org.bitcoinj.script.ScriptChunk;
+import org.bitcoinj.script.ScriptException;
 
 // TODO: review this
 

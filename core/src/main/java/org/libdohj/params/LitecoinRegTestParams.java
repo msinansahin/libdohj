@@ -73,7 +73,7 @@ public class LitecoinRegTestParams extends LitecoinTestNet3Params {
         }
     }
 
-    private static LitecoinRegTestParams instance;
+    protected static LitecoinRegTestParams instance;
 
     public static synchronized LitecoinRegTestParams get() {
         if (instance == null) {
